@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equvi="" content=" text/html;charset = utf-8" />
+	<meta name="descript" content="插件的使用" />
+	<meta name="keywords" content="插件，使用" />
+	<title>插件的调用</title>
+	<link rel="stylesheet" href="#" />
+	<script type="text/javascript" src="http://js.atguat.com.cn/gmlib/jq/1.7.1/jquery.js"></script>
+	<script type="text/javascript" src="ajaxPop.js"></script>
+	<style>
+	/*text/css*/
+	body{ height:1000px; padding:0; margin:0;}
+	.clickBtn,.clickBtn02{width:150px; height:30px; margin:80px auto; background:#eee;border:1px solid #ccc; text-align:center; line-height:28px; cursor:pointer;}
+	</style>
+
+</head>
+<body>
+	<div class="clickBtn">调用插件</div>
+	<div class="clickBtn02">调用插件</div>
+	<script type="text/javascript">
+		//调用插件一处
+		$('.clickBtn').click(function(){
+			$('.clickBtn').ajaxPop({message:'调用插件成功',callback:fn_lh});
+		});
+		var fn_lh =function(){
+			alert('我是执行的回调函数');
+		}
+		//调用插件二处
+		$('.clickBtn02').click(function(){
+			$('.clickBtn02').ajaxPop({message:'调用插件成功02',callback:fn_lh02});
+		});
+		var fn_lh02 =function(){
+			alert('我是执行的回调函数02');
+		}
+
+	</script>
+</body>
+</html>
